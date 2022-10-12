@@ -56,7 +56,7 @@ while True:
         
     if answer == 'h':
         if nextCardValue > currentCardValue:
-            print('You got it right! You earned 20 points!')
+            print('You got it right! It was higher.You earned 20 points!')
             score +=20
         else:
             print('Sorry, you guessed wrong. You lose 15 points')
@@ -64,10 +64,20 @@ while True:
             
     elif answer == 'l':
         if nextCardValue < currentCardValue:
-            print('You got it right! You earned 20 points!')
+            print('You got it right! It was lower. You earned 20 points!')
             score +=20
         else:
             print('Sorry, you guessed wrong. You lose 15 points')
             score -=15 
+            
+    print('Your score is: ' + score)
+    print()
+    currentCardRank = nextCardRank
+    currentCardValue = nextCardValue
+    
+    goAgain = input('Press Enter to play again, or q to quit: ')
+    if goAgain == 'q':
+        break
+    print('OK, bye!')
         
     
