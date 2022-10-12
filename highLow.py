@@ -24,3 +24,16 @@ print('/n')
 print('If you guess right, you get 20 points. If not, you loose 15 points')
 print('/n')
 print('You have 50 points to start. Go!')
+
+startingDeckList = []
+#Each card is a dictionary (rank, suit, value). Retrieve first value of each tuple and save it in dict to make up card
+for suit in SUIT_TUPLE:
+    for thisValue, rank in enumerate(RANK_TUPLE):
+        cardDict = {'rank': rank, 'suit': suit, 'value': thisValue+1}
+        startingDeckList.append(cardDict)
+score = 50
+
+#to play multiple rounds:
+while True:
+    print()
+    
