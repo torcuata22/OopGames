@@ -50,5 +50,28 @@ def withdraw( accountNumber,amountToWithdraw, password):
     accountBalancesList[accountNumber] =  accountBalancesList[accountNumber] - amountToWithdraw
     return accountBalancesList[accountNumber]
 
+#create dummy accounts, use len(accountNamesList) as account number:
+print("Joe's account number is: ", len(accountNamesList))
+newAccount("Joe", 100, "soup")
+
+print("Mary's account number is: ", len(accountNamesList))
+newAccount("Mary", 12345, "nuts")
+
+while True:
+    print()
+    print('Press b to get the balance')
+    print('Press d to make a deposit')
+    print('Press n to create a new account')
+    print('Press w to make a withdrawal')
+    print('Press s to show all accounts')
+    print('Press q to quit')
+    print()
+    
+    action = input('What do you want to do? ')
+    action = action.lower()  # force lowercase
+    action = action[0]  # just use first letter
+    print()
+
+
           
     
