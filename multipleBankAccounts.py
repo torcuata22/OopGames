@@ -67,11 +67,44 @@ while True:
     print('Press q to quit')
     print()
     
-    action = input('What do you want to do? ')
-    action = action.lower()  # force lowercase
-    action = action[0]  # just use first letter
+    action = input('What do you want to do? ') # this is a string
+    action = action.lower()  # forces answer to be lowercase
+    action = action[0]  # use only the first letter of the string
     print()
 
-
-          
+    if action == "b":
+        print('Retrieve account balance for: ')
+        userAccountNumber = input('Please enter your account number: ')
+        userAccountNumber = int(userAccountNumber)
+        userPassword = input('Please enter your password')
+        theBalance = getBalance(userAccountNumber, userPassword)
+        if theBalance != None:
+            print('Your available balance is: ')
+        
+    elif action == "d":
+        print("Deposit")
+        userAccountNumber = input('Please enter your account number: ')
+        userAccountNumber = int(userAccountNumber)
+        userPassword = input('Please enter your password')
+        userDepositAmount = input("How much would you like to deposit?")
+        userDepositAmount = int(userDepositAmount)
+        newBalance = deposit(userAccountNumber, userDepositAmount, userPassword)
+        if newBalance != None:
+            print('Your new balance is:', newBalance)
+        
+  
+    elif action == "n":
+        print('New account')
+        userName = input('Please enter your desired user name')
+        userStartingDeposit = input("Please enter your initial deposit for your new account")
+        userStartingDeposit = int(userStartingDeposit)
+        userPassword = input('Please create your password')
+        pass
+    elif action == "w":
+        pass       
+    elif action == "s":
+        pass
+    if action == "q":
+        pass
+     
     
