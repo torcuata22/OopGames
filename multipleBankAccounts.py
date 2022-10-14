@@ -99,12 +99,30 @@ while True:
         userStartingDeposit = input("Please enter your initial deposit for your new account")
         userStartingDeposit = int(userStartingDeposit)
         userPassword = input('Please create your password')
-        pass
+        userAccountNumber = len(accountNamesList)
+        newAccount(userName, userStartingDeposit, userPassword)
+        print('Your new account number is:', userAccountNumber)
+        
+   
     elif action == "w":
-        pass       
+        print("Deposit")
+        userAccountNumber = input('Please enter your account number: ')
+        userAccountNumber = int(userAccountNumber)
+        userPassword = input('Please enter your password')
+        userWithdrawAmount = input("How much would you like to deposit?")
+        userWithdrawAmount = int(userWithdrawAmount)
+        newBalance = deposit(userAccountNumber, userWithdrawAmount, userPassword)
+        if newBalance != None:
+            print('Your new balance is:', newBalance)      
+    
     elif action == "s":
-        pass
+        print("Show: ")
+        nAccounts = len(accountNamesList)
+        for accountNumber in range(0, nAccounts):
+            show(accountNumber)
+            
     if action == "q":
-        pass
-     
+       print('Goodbye!')
+       break
+print('Done')
     
