@@ -2,15 +2,19 @@
 
 accountNamesList = []
 accountBalancesList=[]
-accountPasswordsLists=[]
+accountPasswordsList=[]
 
 def newAccount(name, balance, password):
-    global accountNamesList, accountBalancesList, accountPasswordsLists
+    global accountNamesList, accountBalancesList, accountPasswordsList
 #To create new account: append appropriate value to each list:
     accountNamesList.append(name)
     accountBalancesList.append(balance)
-    accountPasswordsLists.append(password)
+    accountPasswordsList.append(password)
     
 def show(accountNumber):
-    global accountNamesList, accountBalancesList, accountPasswordsLists
+    global accountNamesList, accountBalancesList, accountPasswordsList
+    print('Account: ', accountNumber)
+    print(' Name: ', accountNamesList[accountNumber])
+    print(' Balance: ', accountBalancesList[accountNumber])
+    print(' Password: ', accountPasswordsList[accountNumber])
     
